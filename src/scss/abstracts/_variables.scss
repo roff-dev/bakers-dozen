@@ -1,0 +1,28 @@
+// colour variables
+$colourPrimary:#52658f; //blue ish
+$colourSecondary:#f7f5e6; //beige
+$colourButton:#f7882f; //orange
+$colourAccent:#333a56; //navy
+
+//breakpoints
+
+$breakpoints: (
+    's': 768px,
+    'm': 992px,
+    'l': 1260px, 
+);
+
+@mixin mq($break) {  
+    $value: map-get($breakpoints, $break);
+    $sm: map-get($breakpoints, 'sm');            
+    
+    @if $value == null {
+      @error "`#{$break}` is not a valid breakpoint name.";          
+    }          
+                 
+    @else {
+      @media (min-width: $value) {
+        @content;       
+      }             
+    }  
+}
