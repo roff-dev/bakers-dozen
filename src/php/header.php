@@ -8,5 +8,21 @@
     <script src="https://kit.fontawesome.com/80735aad70.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <header>
+        <nav class="main-nav">
+            <div class="header-logo">
+                <h1><a href="/">Baker's Dozen</a></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">PRODUCTS</a></li>
+                <li><a href="#">TESTIMONIALS</a></li>
+                <li><a href="#">ORDER</a></li>
+                <li><a href="tel:" class="phone-icon"><i class="fas fa-phone"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <banner>
 
+    </banner>
 
