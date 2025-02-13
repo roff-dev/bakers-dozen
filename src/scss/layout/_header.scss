@@ -31,6 +31,8 @@ header{
     padding: 0;
     list-style: none; // removes bullet points on li's
     li{
+        flex: 1;  // Makes each li take up equal space
+        text-align: center;
         padding: 0 10px 0 10px;
         margin-top: 10px;
     }
@@ -43,12 +45,17 @@ header{
         justify-content: center;
         align-items: center;
     }
-    .header-logo{
-        margin: 0 10px 0 0;
-    }
-    .nav-links{
+    h1 {
+        flex: 2;  // h1 is set to take up double the space of an li
         margin: 0;
-        li{
+        text-align: center;
+    }
+    .nav-links {
+        flex: 5;  // takes up 5 spaces (one for each li)
+        display: flex;
+        margin: 0;
+        li {
+            flex: 1;  // Each li takes up equal space
             margin: 0;
         }
     }

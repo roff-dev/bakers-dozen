@@ -10,9 +10,7 @@
 <body>
     <header>
         <nav class="main-nav">
-            <div class="header-logo">
-                <h1><a href="/">Baker's Dozen</a></h1>
-            </div>
+            <h1><a href="/">Baker's Dozen</a></h1>
             <ul class="nav-links">
                 <li><a href="#">ABOUT</a></li>
                 <li><a href="#">PRODUCTS</a></li>
