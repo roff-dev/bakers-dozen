@@ -1,3 +1,107 @@
+.food-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.food-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 33.3333333333vw;
+  padding: 3.5rem 0;
+  border-bottom: 4px solid transparent;
+}
+.food-card:hover {
+  border-color: #52658f;
+}
+.food-card i {
+  font-size: 4rem;
+  color: #52658f;
+  background-color: #fff;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.food-card h4 {
+  color: #52658f;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.food-information-section h4 {
+  text-align: center;
+  color: #52658f;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.food-information-section .food-img-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 10%;
+}
+.food-information-section .food-img-text .circle-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  margin-right: 200px;
+}
+.food-information-section .food-img-text .circle-container .circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  border: 5px solid white;
+}
+.food-information-section .food-img-text .circle-container .circle-1 {
+  width: 150px;
+  height: 150px;
+  background-color: #f7f5e6;
+  top: -10px;
+  left: 170px;
+}
+.food-information-section .food-img-text .circle-container .circle-2 {
+  width: 220px;
+  height: 220px;
+  background-color: #52658f;
+  top: 100px;
+  left: 130px;
+}
+.food-information-section .food-img-text .circle-container .image-circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+  top: 0px;
+  left: 0px;
+  border: 5px solid white;
+}
+.food-information-section .food-img-text .circle-container .image-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.food-information-section .food-img-text .food-description {
+  padding-left: 15%;
+  color: #52658f;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 /*# sourceMappingURL=main.css.map */

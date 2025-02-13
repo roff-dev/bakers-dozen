@@ -1,13 +1,13 @@
 <?php
 // Main entry point
-
+require_once '../src/php/init.php';
 @include "../src/php/header.php";
 
-require_once '../src/php/init.php';
 
 
 
 
+@include "../src/php/food_body.php";
 
 
 
