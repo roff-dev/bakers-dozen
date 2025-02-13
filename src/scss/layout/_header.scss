@@ -17,16 +17,58 @@ header{
     }
 }
 
+.header-logo{
+    font-size: 1.7rem;
+}
+
 
 .nav-links{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0;
+    margin: 0 0 20px 0;
     padding: 0;
     list-style: none; // removes bullet points on li's
     li{
         padding: 0 10px 0 10px;
+        margin-top: 10px;
     }
+}
+
+@media(min-width: 768px){
+    // changing the flex to row and aligning items to match the example page
+    .main-nav{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .header-logo{
+        margin: 0 10px 0 0;
+    }
+    .nav-links{
+        margin: 0;
+        li{
+            margin: 0;
+        }
+    }
+}
+
+// adds a bit more right margin when theres enough width to make it look better
+@media(min-width: 800px){
+    .header-logo{
+        margin: 0 30px 0 0;
+    }
+}
+
+@media(min-width: 992px){
+    .nav-links{
+        li{
+            padding: 0 20px 0 10px;
+        }
+    }
+}
+
+@media(min-width: 1260px){
+    
 }
