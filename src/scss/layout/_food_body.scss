@@ -1,0 +1,123 @@
+//large boxes with logo and food container
+
+.food-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+  //each seperate food card
+.food-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(100vw/3); // each box = 1/3 of page
+    padding: 3.5rem 0;
+    border-bottom: 4px solid transparent;
+
+    &:hover {
+      border-color: $colourPrimary;
+    }
+    
+    //food icons
+    i {
+      font-size: 4rem;
+      color: $colourPrimary; 
+      background-color: #fff;
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    //food title
+    h4 {
+      color: $colourPrimary;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      //width: 45%;
+    }
+}
+
+//food pic and information section
+
+.food-information-section {
+	h4 {
+		text-align: center;
+      	color: $colourPrimary;
+      	font-size: 1.2rem;
+      	font-weight: 600;
+      	text-transform: uppercase;
+      	letter-spacing: 0.5px;
+	}
+
+	// image and food wrapper
+	.food-img-text {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+      	margin: 0 10%;
+
+		.circle-container {
+			position: relative;
+			width: 350px;
+			height: 350px;
+			margin-right: 200px;
+
+			.circle {
+				position: absolute;
+				border-radius: 50%;
+				z-index: 1;
+				border: 5px solid white;
+			}
+			//beige?? smallest circle
+			.circle-1 {
+				width: 150px;
+				height: 150px;
+				background-color: $colourSecondary; 
+				top: -10px;
+				left: 170px;
+  			}
+			// blue medium sized circle
+			.circle-2 {
+				width: 220px;
+				height: 220px;
+				background-color: $colourPrimary; 
+				top: 100px;
+				left: 130px;
+			}
+			.image-circle {
+				position: absolute;
+				width: 300px;
+				height: 300px;
+				border-radius: 50%;
+				overflow: hidden;
+				z-index: 2;
+				top: 0px;
+				left: 0px;
+				border: 5px solid white;
+			  
+				img {
+				  width: 100%;
+				  height: 100%;
+				  object-fit: cover;
+				}
+			  }
+		}
+		// text next to circle images
+		.food-description {
+			padding-left: 15%;
+			color: $colourPrimary;
+		}
+	}
+}
+
+
+
+
+
+
+
+

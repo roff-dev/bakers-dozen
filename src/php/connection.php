@@ -24,7 +24,7 @@ $options = [
 try {
     // Create PDO instance
     $pdo = new PDO($dsn, $username, $password, $options);
-    echo "Database connection successful!";
+    //echo "Database connection successful!";
 } catch (PDOException $e) {
     // Handle errors
     die("Database connection failed: " . $e->getMessage());
