@@ -1,3 +1,52 @@
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+footer {
+  background-color: #52658f;
+  color: #f7f5e6;
+}
+
+.footer-list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 20px;
+}
+
+.list-margin {
+  margin-bottom: 20px;
+}
+
+.arrow-list-margin {
+  padding-right: 5px;
+}
+
+.footer-list-right li {
+  position: relative;
+  padding-left: 15px;
+}
+.footer-list-right li::before {
+  content: "\f105";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.copyright {
+  position: relative;
+  text-align: center;
+  bottom: 0;
+  padding-bottom: 30px;
+}
+
 .food-card-container {
   display: flex;
   justify-content: center;
