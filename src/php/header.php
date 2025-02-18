@@ -16,7 +16,7 @@
                 <li><a href="#">PRODUCTS</a></li>
                 <li><a href="#">TESTIMONIALS</a></li>
                 <li><a href="#">ORDER</a></li>
-                <li><a href="tel:" class="phone-icon"><i class="fas fa-phone"></i></a></li>
+                <li><a href="tel:" class="phone-icon"><i class="fa-solid fa-phone fa-flip-horizontal"></i></a></li>
             </ul>
         </nav>
     </header>

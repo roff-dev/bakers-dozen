@@ -17,28 +17,48 @@ header{
     }
 }
 
-.header-logo{
-    font-size: 1.7rem;
+
+h1{
+    font-size: 3rem;
 }
 
 
 .nav-links{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
     margin: 0 0 20px 0;
     padding: 0;
     list-style: none; // removes bullet points on li's
     li{
-        flex: 1;  // Makes each li take up equal space
         text-align: center;
         padding: 0 10px 0 10px;
         margin-top: 10px;
+        &:hover{
+            text-decoration: underline;
+            text-decoration-color: $colourButton;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 5px;   
+        }
+    }
+    .phone-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $colourAccent;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        i{
+            color: $colourButton;
+            font-size: 1.8rem;
+        }
     }
 }
 
 @media(min-width: 768px){
+
     // changing the flex to row and aligning items to match the example page
     .main-nav{
         flex-direction: row;
@@ -51,9 +71,10 @@ header{
         text-align: center;
     }
     .nav-links {
-        flex: 5;  // takes up 5 spaces (one for each li)
-        display: flex;
+        flex: 4;  // takes up 5 spaces (one for each li)
+        flex-direction: row;
         margin: 0;
+        align-items: center;
         li {
             flex: 1;  // Each li takes up equal space
             margin: 0;
@@ -63,12 +84,17 @@ header{
 
 // adds a bit more right margin when theres enough width to make it look better
 @media(min-width: 800px){
+
     .header-logo{
         margin: 0 30px 0 0;
     }
 }
 
 @media(min-width: 992px){
+    h1{
+        font-size: 2.8rem;
+    }
+
     .nav-links{
         li{
             padding: 0 20px 0 10px;
@@ -77,5 +103,7 @@ header{
 }
 
 @media(min-width: 1260px){
-    
+    h1{
+        font-size: 3.5rem;
+    }
 }

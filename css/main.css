@@ -26,34 +26,56 @@ header {
   color: #f7f5e6;
 }
 
-.header-logo {
-  font-size: 1.7rem;
+h1 {
+  font-size: 3rem;
 }
 
 .nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 0 20px 0;
   padding: 0;
   list-style: none;
 }
 .nav-links li {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   text-align: center;
   padding: 0 10px 0 10px;
   margin-top: 10px;
+}
+.nav-links li:hover {
+  text-decoration: underline;
+  text-decoration-color: #f7882f;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+.nav-links .phone-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #333a56;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+}
+.nav-links .phone-icon i {
+  color: #f7882f;
+  font-size: 1.8rem;
 }
 
 @media (min-width: 768px) {
@@ -77,13 +99,17 @@ header {
     text-align: center;
   }
   .nav-links {
-    -webkit-box-flex: 5;
-        -ms-flex: 5;
-            flex: 5;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    -webkit-box-flex: 4;
+        -ms-flex: 4;
+            flex: 4;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     margin: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .nav-links li {
     -webkit-box-flex: 1;
@@ -98,8 +124,16 @@ header {
   }
 }
 @media (min-width: 992px) {
+  h1 {
+    font-size: 2.8rem;
+  }
   .nav-links li {
     padding: 0 20px 0 10px;
+  }
+}
+@media (min-width: 1260px) {
+  h1 {
+    font-size: 3.5rem;
   }
 }
 .food-card-container {
