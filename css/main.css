@@ -13,7 +13,6 @@
 }
 .main-nav .nav-content {
   width: 100%;
-  max-width: 1260px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,17 +111,22 @@ h1 {
   width: 80%;
   height: 120%;
   border-radius: 50%;
-  background-color: red;
+  border: 5px solid #333a56;
+  background-color: #f7f5e6;
   margin-left: -20%;
 }
 .banner-circle .banner-content {
+  max-width: 200px;
+  color: #333a56;
   margin-left: 30%;
 }
 .banner-circle .banner-content h2 {
+  font-size: 2rem;
   margin: 15px 0;
 }
 .banner-circle .banner-content p {
   font-size: 0.8rem;
+  font-weight: bold;
   margin: 15px 0;
 }
 .banner-circle .banner-content .main-button {
@@ -186,10 +190,23 @@ h1 {
             flex: 1;
     margin: 0;
   }
-}
-@media (min-width: 800px) {
-  .header-logo {
-    margin: 0 30px 0 0;
+  .banner-circle {
+    height: 140%;
+  }
+  .banner-circle .banner-content {
+    max-width: none;
+    margin-left: 15%;
+  }
+  .banner-circle .banner-content h2 {
+    font-size: 3rem;
+    margin: 20px 0;
+  }
+  .banner-circle .banner-content p {
+    font-size: 1rem;
+    margin: 20px 0;
+  }
+  .banner-circle .banner-content .main-button {
+    margin: 20px 0;
   }
 }
 @media (min-width: 992px) {
@@ -199,10 +216,46 @@ h1 {
   .nav-links li {
     padding: 0 20px 0 10px;
   }
+  .banner-circle {
+    height: 160%;
+  }
+  .banner-circle .banner-content {
+    max-width: none;
+    margin-left: 0;
+  }
+  .banner-circle .banner-content h2 {
+    font-size: 3rem;
+    margin: 20px 0;
+  }
+  .banner-circle .banner-content p {
+    font-size: 1rem;
+    margin: 20px 0;
+  }
+  .banner-circle .banner-content .main-button {
+    margin: 20px 0;
+  }
 }
 @media (min-width: 1260px) {
   h1 {
     font-size: 3.5rem;
+  }
+  .banner-circle {
+    height: 250%;
+  }
+  .banner-circle .banner-content {
+    max-width: none;
+    margin-left: 0;
+  }
+  .banner-circle .banner-content h2 {
+    font-size: 4.5rem;
+    margin: 20px 0;
+  }
+  .banner-circle .banner-content p {
+    font-size: 1rem;
+    margin: 20px 0;
+  }
+  .banner-circle .banner-content .main-button {
+    margin: 20px 0;
   }
 }
 .food-card-container {
