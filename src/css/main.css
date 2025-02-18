@@ -4,9 +4,26 @@ ul {
   list-style: none;
 }
 
+.review-section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 100px;
+}
+.review-section-container h3 {
+  color: #52658f;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 footer {
   background-color: #52658f;
   color: #f7f5e6;
+  overflow: hidden;
 }
 
 .footer-list-container {

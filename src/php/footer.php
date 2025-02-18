@@ -39,5 +39,6 @@
             <p class="copyright">Copyright &copy; Baker's Dozen. All Rights Reserved 2019</p>
     </footer>
 </body>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script></script>
 </html>
