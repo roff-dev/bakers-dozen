@@ -1,0 +1,14 @@
+@mixin main-button {
+    display: inline-block;
+    padding: 15px 40px;
+    border-radius: 25px;
+    background-color: $colourButton;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: darken($colourButton, 10%);
+    }
+}

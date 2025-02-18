@@ -64,14 +64,15 @@ h1{
 /////////////////////////////////////////////////////
 
 .banner{
+    display: flex;
     position: relative;
+    align-items: center;
+    overflow: hidden;
     width: 100%;
     height: 500px;
     background-image: url('../../images/bread.jpg');
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+    background-size: 70% 100%;
+    background-position: right center;
 }
 .banner-circle{
     display: flex;
@@ -86,6 +87,17 @@ h1{
 
     .banner-content{
         margin-left: 30%;
+        h2{
+            margin: 15px 0;
+        }
+         p{
+            font-size: .8rem;
+            margin: 15px 0;
+         }
+        .main-button{
+            @include main-button;
+            margin: 15px 0;
+        }
     }
 }
 

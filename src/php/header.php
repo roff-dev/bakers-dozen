@@ -30,6 +30,7 @@
                         <BR>
                         HEART OF NORWICH
                     </p>
+                    <a href="#" class="main-button">ORDER NOW</a>
                 </div>
             </div>
         </section>

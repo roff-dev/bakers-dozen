@@ -56,14 +56,15 @@ h1 {
 }
 
 .banner {
+  display: flex;
   position: relative;
+  align-items: center;
+  overflow: hidden;
   width: 100%;
   height: 500px;
   background-image: url("../../images/bread.jpg");
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+  background-size: 70% 100%;
+  background-position: right center;
 }
 
 .banner-circle {
@@ -79,6 +80,27 @@ h1 {
 }
 .banner-circle .banner-content {
   margin-left: 30%;
+}
+.banner-circle .banner-content h2 {
+  margin: 15px 0;
+}
+.banner-circle .banner-content p {
+  font-size: 0.8rem;
+  margin: 15px 0;
+}
+.banner-circle .banner-content .main-button {
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 25px;
+  background-color: #f7882f;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 15px 0;
+}
+.banner-circle .banner-content .main-button:hover {
+  background-color: #ea6d09;
 }
 
 @media (min-width: 768px) {
