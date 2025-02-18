@@ -19,6 +19,7 @@ header {
           flex-direction: column;
   text-align: center;
   width: 100%;
+  max-width: 1260px;
   margin: 20px;
 }
 .main-nav a {
@@ -92,6 +93,7 @@ h1 {
             align-items: center;
   }
   h1 {
+    font-size: 2rem;
     -webkit-box-flex: 2;
         -ms-flex: 2;
             flex: 2;
