@@ -10,17 +10,20 @@
 <body>
     <header>
         <nav class="main-nav">
-            <h1><a href="/">Baker's Dozen</a></h1>
-            <ul class="nav-links">
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">PRODUCTS</a></li>
-                <li><a href="#">TESTIMONIALS</a></li>
-                <li><a href="#">ORDER</a></li>
-                <li><a href="tel:" class="phone-icon"><i class="fa-solid fa-phone fa-flip-horizontal"></i></a></li>
-            </ul>
+            <div class="nav-container">
+                <h1><a href="/">Baker's Dozen</a></h1>
+                <ul class="nav-links">
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">PRODUCTS</a></li>
+                    <li><a href="#">TESTIMONIALS</a></li>
+                    <li><a href="#">ORDER</a></li>
+                    <li><a href="tel:" class="phone-icon"><i class="fa-solid fa-phone fa-flip-horizontal"></i></a></li>
+                </ul>
+            </div>
         </nav>
+        <section class="banner">
+            <!-- Add your banner content here -->
+        </section>
     </header>
-    <banner>
 
-    </banner>
 
