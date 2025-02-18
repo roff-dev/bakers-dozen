@@ -10,7 +10,7 @@
 <body>
     <header>
         <nav class="main-nav">
-            <div class="nav-container">
+            <div class="nav-content">
                 <h1><a href="/">Baker's Dozen</a></h1>
                 <ul class="nav-links">
                     <li><a href="#">ABOUT</a></li>
@@ -22,7 +22,16 @@
             </div>
         </nav>
         <section class="banner">
-            <!-- Add your banner content here -->
+            <div class="banner-circle">
+                <div class="banner-content">
+                    <h2>Everyday Fresh</h2>
+                    <p>
+                        THE FINEST BREADS AND PASTRIES IN THE
+                        <BR>
+                        HEART OF NORWICH
+                    </p>
+                </div>
+            </div>
         </section>
     </header>
 

@@ -1,14 +1,16 @@
+///  NAV
+/////////////////////////////////////////////////////
+
 .main-nav{
     display: flex;
     flex-direction: column;
     text-align: center;
     width: 100%;
-    // added a max width so it follows the look of the brief, otherwise the nav links look to spread out
-    // max-width: 1260px;
     padding: 20px;
     background-color: $colourPrimary;
-    .nav-container {
+    .nav-content {
         width: 100%;
+        max-width: 1260px;
         display: flex;
         flex-direction: column;
     }
@@ -58,14 +60,62 @@ h1{
     }
 }
 
+///  BANNER 
+/////////////////////////////////////////////////////
+
+.banner{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-image: url('../../images/bread.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.banner-circle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 120%;
+    border-radius: 50%;
+    background-color: red;
+    margin-left: -20%;
+
+    .banner-content{
+        margin-left: 30%;
+    }
+}
+
+// .banner-circle{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     width: 80%;
+//     height: 180%;
+//     border-radius: 50%;
+//     background-color: red;
+//     margin-left: -20%;
+
+//     .banner-content{
+//         // margin-right: 20%;
+//     }
+// }
+
 @media(min-width: 768px){
+
+    ///  NAV
+    /////////////////////////////////////////////////////
 
     // changing the flex to row and aligning items to match the example page
     .main-nav{
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        .nav-container {
+        .nav-content {
             flex-direction: row;
         }
     }
@@ -85,17 +135,30 @@ h1{
             margin: 0;
         }
     }
+
+    ///  BANNER 
+    /////////////////////////////////////////////////////
 }
 
 // adds a bit more right margin when theres enough width to make it look better
 @media(min-width: 800px){
 
+    ///  NAV
+    /////////////////////////////////////////////////////
+
     .header-logo{
         margin: 0 30px 0 0;
     }
+
+    ///  BANNER 
+    /////////////////////////////////////////////////////   
 }
 
 @media(min-width: 992px){
+
+    ///  NAV
+    /////////////////////////////////////////////////////
+    
     h1{
         font-size: 2.8rem;
     }
@@ -105,10 +168,17 @@ h1{
             padding: 0 20px 0 10px;
         }
     }
+
+    ///  BANNER 
+    /////////////////////////////////////////////////////
 }
 
 @media(min-width: 1260px){
+
     h1{
         font-size: 3.5rem;
     }
+
+    ///  BANNER 
+    /////////////////////////////////////////////////////
 }
