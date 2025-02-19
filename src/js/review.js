@@ -5,6 +5,15 @@
 ////////
 // Slick Carousel Plugin
 ////////
+
 $(document).ready(function(){
-    $('.single-item').slick();
+    $('.slides').slick({
+        slidesToShow: 1,
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        arrows: false,
+    });
 });

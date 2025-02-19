@@ -20,6 +20,73 @@ ul {
   letter-spacing: 0.5px;
 }
 
+.review-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+}
+.review h4 {
+  display: flex;
+  position: relative;
+  color: #52658f;
+  justify-content: right;
+}
+
+.order-review-btn {
+  background-color: #f7882f;
+  color: #ffffff;
+  border-radius: 35px;
+  font-size: 1.5rem;
+  border: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
+  width: 250px;
+}
+
+.fa-quote-left {
+  color: #333956;
+  align-self: center;
+  font-size: 2.5rem;
+  padding-right: 20px;
+}
+
+.fa-quote-right {
+  color: #333956;
+  align-self: center;
+  font-size: 2.5rem;
+  padding-left: 20px;
+}
+
+.slides {
+  width: 700px;
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  bottom: 30px !important;
+}
+.slick-dots button::before {
+  color: hsla(0, 0%, 100%, 0.5) !important;
+  font-size: 11px !important;
+  margin: 0 10px !important;
+  width: 16px !important;
+  height: 16px !important;
+  opacity: 1 !important;
+}
+
+.order-review-btn:hover {
+  cursor: pointer;
+  background-color: #da7727;
+}
+
 footer {
   background-color: #52658f;
   color: #f7f5e6;
