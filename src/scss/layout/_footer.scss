@@ -1,0 +1,55 @@
+// ==========================================================================
+// Footer Styles
+// ==========================================================================
+footer {
+    background-color: $colourPrimary;
+    color: $colourSecondary;
+    overflow: hidden
+}
+
+.footer-list-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 20px;
+}
+
+.list-margin {
+    margin-bottom: 20px;
+}
+
+.arrow-list-margin{
+    padding-right: 5px;
+}
+
+// .footer-arrow-right::before {
+//     content: "<i class="fa-solid fa-angle-right"></i>"
+// }
+
+.footer-list-right{
+        li {
+          position: relative;
+          padding-left: 15px;  // Add some space for the icon
+      
+          &::before {
+            content: "\f105";  // Unicode for fa-keyboard icon
+            font-family: "Font Awesome 6 Free";  // or "Font Awesome 6 Solid"
+            font-weight: 900;  // Required for solid icons
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+}
+
+.copyright {
+    position: relative;
+    text-align: center;
+    bottom: 0;
+    padding-bottom: 30px;
+}
+ 
+  

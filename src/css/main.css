@@ -1,3 +1,136 @@
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.review-section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 100px;
+}
+.review-section-container h3 {
+  color: #52658f;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.review-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+}
+.review h4 {
+  display: flex;
+  position: relative;
+  color: #52658f;
+  justify-content: right;
+}
+
+.order-review-btn {
+  background-color: #f7882f;
+  color: #ffffff;
+  border-radius: 35px;
+  font-size: 1.5rem;
+  border: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
+  width: 250px;
+}
+
+.fa-quote-left {
+  color: #333956;
+  align-self: center;
+  font-size: 2.5rem;
+  padding-right: 20px;
+}
+
+.fa-quote-right {
+  color: #333956;
+  align-self: center;
+  font-size: 2.5rem;
+  padding-left: 20px;
+}
+
+.slides {
+  width: 700px;
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  bottom: 30px !important;
+}
+.slick-dots button::before {
+  color: hsla(0, 0%, 100%, 0.5) !important;
+  font-size: 11px !important;
+  margin: 0 10px !important;
+  width: 16px !important;
+  height: 16px !important;
+  opacity: 1 !important;
+}
+
+.order-review-btn:hover {
+  cursor: pointer;
+  background-color: #da7727;
+}
+
+footer {
+  background-color: #52658f;
+  color: #f7f5e6;
+  overflow: hidden;
+}
+
+.footer-list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 20px;
+}
+
+.list-margin {
+  margin-bottom: 20px;
+}
+
+.arrow-list-margin {
+  padding-right: 5px;
+}
+
+.footer-list-right li {
+  position: relative;
+  padding-left: 15px;
+}
+.footer-list-right li::before {
+  content: "\f105";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.copyright {
+  position: relative;
+  text-align: center;
+  bottom: 0;
+  padding-bottom: 30px;
+}
+
 .food-card-container {
   display: flex;
   justify-content: center;
