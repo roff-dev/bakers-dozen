@@ -5,21 +5,21 @@
     <div class="food-card-container">
         <div class="food-card">
             <i class="fa-solid fa-bread-slice"></i>
-            <h4>BREAD BAKED<br>DAILY</h4>
+            <h4 class="h4">BREAD BAKED<br>DAILY</h4>
         </div>
         <div class="food-card">
             <i class="fa-solid fa-cookie-bite"></i>
-            <h4>HANDMADE SWEETS<br>AND PASTRIES</h4>
+            <h4 class="h4">HANDMADE SWEETS<br>AND PASTRIES</h4>
         </div>
         <div class="food-card">
             <i class="fa-solid fa-cake-candles"></i>
-            <h4>SPECIALLY MADE<br>FOR YOUR EVENT</h4>
+            <h4 class="h4">SPECIALLY MADE<br>FOR YOUR EVENT</h4>
         </div>
     </div>
 
     <!-- FOOD INFORMATION section -->
     <div class="food-information-section">
-        <h4>established in 2011, our bread is hand-crafted<br>using the finest local ingredients</h4>
+        <h4 class="h4">established in 2011, our bread is hand-crafted<br>using the finest local ingredients</h4>
         <div class="food-img-text">
             <div class="circle-container">
                 

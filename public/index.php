@@ -6,8 +6,11 @@ require_once '../src/php/init.php';
 
 
 
-
+// main body content - Kieron
 @include "../src/php/food_body.php";
+
+//product body content with carousel - Kieron
+@include "../src/php/food_products.php";
 
 
 
