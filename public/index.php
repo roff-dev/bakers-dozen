@@ -15,7 +15,7 @@ require_once '../src/php/init.php';
 
 
 
-
+@include "../src/php/review.php";
 @include "../src/php/footer.php";
 
 

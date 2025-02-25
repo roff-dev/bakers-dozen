@@ -1,13 +1,11 @@
-.review-section-container h3 {
-  color: #52658f;
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
 .main-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
   width: 100%;
   padding: 20px;
@@ -15,9 +13,16 @@
 }
 .main-nav .nav-content {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .main-nav a {
   text-decoration: none;
@@ -29,10 +34,18 @@ h1 {
 }
 
 .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 0 20px 0;
   padding: 0;
   list-style: none;
@@ -50,9 +63,15 @@ h1 {
   text-underline-offset: 7px;
 }
 .nav-links .phone-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #333a56;
   border-radius: 50%;
   width: 55px;
@@ -64,9 +83,13 @@ h1 {
 }
 
 .banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: hidden;
   width: 100%;
   height: 500px;
@@ -87,8 +110,13 @@ h1 {
 
 .banner-content {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   max-width: 200px;
   color: #333a56;
   margin-left: 30px;
@@ -127,27 +155,48 @@ h1 {
 }
 @media (min-width: 768px) {
   .main-nav {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .main-nav .nav-content {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   h1 {
     font-size: 2rem;
-    flex: 2;
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
     margin: 0;
     text-align: center;
   }
   .nav-links {
-    flex: 4;
-    flex-direction: row;
+    -webkit-box-flex: 4;
+        -ms-flex: 4;
+            flex: 4;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     margin: 0;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .nav-links li {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     margin: 0;
   }
   .banner-circle {
@@ -234,144 +283,29 @@ h1 {
     font-size: 2rem;
   }
 }
-
-ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.review-section-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 100px;
-}
-.review-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.review {
-  display: flex;
-  flex-direction: column;
-}
-.review h4 {
-  display: flex;
-  position: relative;
-  color: #52658f;
-  justify-content: right;
-}
-
-.order-review-btn {
-  background-color: #f7882f;
-  color: #ffffff;
-  border-radius: 35px;
-  font-size: 1.5rem;
-  border: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 10px;
-  width: 250px;
-}
-
-.fa-quote-left {
-  color: #333956;
-  align-self: center;
-  font-size: 2.5rem;
-  padding-right: 20px;
-}
-
-.fa-quote-right {
-  color: #333956;
-  align-self: center;
-  font-size: 2.5rem;
-  padding-left: 20px;
-}
-
-.slides {
-  width: 700px;
-}
-
-.slick-dots {
-  display: flex;
-  justify-content: center;
-  bottom: 30px !important;
-}
-.slick-dots button::before {
-  color: hsla(0, 0%, 100%, 0.5) !important;
-  font-size: 11px !important;
-  margin: 0 10px !important;
-  width: 16px !important;
-  height: 16px !important;
-  opacity: 1 !important;
-}
-
-.order-review-btn:hover {
-  cursor: pointer;
-  background-color: #da7727;
-}
-
-footer {
-  background-color: #52658f;
-  color: #f7f5e6;
-  overflow: hidden;
-}
-
-.footer-list-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 20px;
-}
-
-.list-margin {
-  margin-bottom: 20px;
-}
-
-.arrow-list-margin {
-  padding-right: 5px;
-}
-
-.footer-list-right li {
-  position: relative;
-  padding-left: 15px;
-}
-.footer-list-right li::before {
-  content: "\f105";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.copyright {
-  position: relative;
-  text-align: center;
-  bottom: 0;
-  padding-bottom: 30px;
-}
-
-
-
 .food-card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .food-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
   width: 33.3333333333vw;
   padding: 3.5rem 0;
@@ -385,9 +319,22 @@ footer {
   color: #52658f;
   background-color: #fff;
   width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.food-card h4 {
+  color: #52658f;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .food-information-section h4 {
@@ -399,9 +346,16 @@ footer {
   letter-spacing: 0.5px;
 }
 .food-information-section .food-img-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 10%;
 }
 .food-information-section .food-img-text .circle-container {
@@ -444,46 +398,12 @@ footer {
 .food-information-section .food-img-text .circle-container .image-circle img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .food-information-section .food-img-text .food-description {
   padding-left: 15%;
   color: #52658f;
-}
-
-.our-products {
-  background-color: #f7f5e6;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.our-products .product-carousel {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0 10%;
-}
-.our-products .product-carousel img {
-  border-radius: 50%;
-  border: 4px solid #52658f;
-}
-.our-products .product-carousel img:hover {
-  border: 4px solid #3f4e6f;
-}
-.our-products .find-more-btn button {
-  border-radius: 25px;
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 12px 30px;
-  background-color: #5B6B8C;
-  color: white;
-  border: none;
-  cursor: pointer;
-  letter-spacing: 2px;
-}
-.our-products .find-more-btn button:hover {
-  background-color: #3f4e6f;
 }
 
 body {
@@ -493,5 +413,6 @@ body {
 }
 
 * {
-  box-sizing: border-box;
-}
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}/*# sourceMappingURL=main.css.map */
