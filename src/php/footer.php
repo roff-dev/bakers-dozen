@@ -44,5 +44,6 @@
   integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
   crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="/src/js/review.js"></script>
+    <script src="../src/js/review.js"></script>
+    <script src="../src/js/products.js"></script>
 </html>
