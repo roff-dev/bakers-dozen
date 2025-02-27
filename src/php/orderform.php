@@ -14,20 +14,20 @@ function clean_input($data) {
 
 // Check if the form is submitted via POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validate first name
+    // Validate name
     if (empty($_POST["name"])) {
         $errors['name'] = "Name is required";
         $hasErrors = true;
     } else {
-        $firstname = clean_input($_POST["name"]);
+        $name = clean_input($_POST["name"]);
     }
 
-    // Validate last name
+    // Validate address
     if (empty($_POST["address"])) {
         $errors['address'] = "Address is required";
         $hasErrors = true;
     } else {
-        $lastname = clean_input($_POST["address"]);
+        $address = clean_input($_POST["address"]);
     }
 
     // Validate email

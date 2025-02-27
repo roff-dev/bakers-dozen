@@ -7,7 +7,7 @@
 </div>
 
 <div class="form-list-container">
-    <form class="forms-container" name="orderForm" id="order-form" onsubmit="return validateForm()" method="POST">
+    <form class="forms-container" name="orderForm" id="order-form" action="../../src/php/orderform.php" onsubmit="return validateForm()" method="POST">
         <div class="form-top">
             <input id="name" class="form form-control" type="text" name="name" placeholder="Name*" value="" required>
         </div>

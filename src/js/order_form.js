@@ -70,7 +70,7 @@ function validateForm() {
      const formData = $('#order-form').serialize(); // Serializes the form fields into a query string
 
      $.ajax({
-         url: 'php/orderform.php', // Make sure this path is correct
+         url: '../../src/php/orderform.php', // Make sure this path is correct
          type: 'POST',
          data: formData, // Send the serialized form data
         success: function(response) {
@@ -125,4 +125,6 @@ function validateForm() {
 
    // Show the success message in the alert-danger div
    $('.alert.alert-danger-hidden').removeClass('alert-danger-hidden').addClass('alert alert-success').html(message).show();
- }
+}
+
+ 
