@@ -6,26 +6,26 @@ function validateForm() {
    let isValid = true;
 
    // Get the form fields
-   let firstnameForm = document.forms["contactForm"]["firstname"].value;
-   let lastnameForm = document.forms["contactForm"]["lastname"].value;
-   let phonenumberForm = document.forms["contactForm"]["telephone"].value;
-   let emailaddressForm = document.forms["contactForm"]["email"].value;
-   let subjectForm = document.forms["contactForm"]["subject"].value;
-   let messageForm = document.forms["contactForm"]["message"].value;
+   let nameForm = document.forms["orderForm"]["name"].value;
+   let addressForm = document.forms["orderForm"]["address"].value;
+   let phonenumberForm = document.forms["orderForm"]["telephone"].value;
+   let emailaddressForm = document.forms["orderForm"]["email"].value;
+   let subjectForm = document.forms["orderForm"]["subject"].value;
+   let messageForm = document.forms["orderForm"]["message"].value;
 
 
    // Reset all previous errors
    $('.form-control').removeClass('has-error');
 
    // Validate First Name
-   if (firstnameForm.value == "") {
-     $(firstnameForm).addClass('has-error');
+   if (nameForm.value == "") {
+     $(nameForm).addClass('has-error');
      isValid = false;
    }
 
     // Validate Last Name
-   if (lastnameForm.value == "") {
-     $(lastnameForm).addClass('has-error');
+   if (addressForm.value == "") {
+     $(addressForm).addClass('has-error');
      isValid = false;
    }
 
@@ -67,10 +67,10 @@ function validateForm() {
      event.preventDefault();
 
      // Gather the form data
-     const formData = $('#contact-form').serialize(); // Serializes the form fields into a query string
+     const formData = $('#order-form').serialize(); // Serializes the form fields into a query string
 
      $.ajax({
-         url: 'inc/contactform.php', // Make sure this path is correct
+         url: 'php/orderform.php', // Make sure this path is correct
          type: 'POST',
          data: formData, // Send the serialized form data
         success: function(response) {
@@ -83,7 +83,7 @@ function validateForm() {
              displaySuccessMessage('Your message has been sent successfully!');
 
              // Reset the form fields
-             $('#contact-form')[0].reset(); 
+             $('#order-form')[0].reset(); 
            } else {
              // If there are errors, display them using the displayErrors function
              displayErrors(response.errors);
