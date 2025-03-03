@@ -46,4 +46,5 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="../src/js/review.js"></script>
     <script src="../src/js/products.js"></script>
+    <script src="../src/js/food_buttons.js"></script>
 </html>
