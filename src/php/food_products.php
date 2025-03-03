@@ -25,7 +25,7 @@ foreach ($products as $product) {
 echo '</div>';
 ?>
         <div class="find-more-btn">
-            <button>find out more</button>
+            <button><a href="find-out-more.php">find out more</a></button>
         </div>
     </div>
 </section>

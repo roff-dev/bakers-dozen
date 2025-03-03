@@ -566,6 +566,10 @@ footer {
   cursor: pointer;
   letter-spacing: 2px;
 }
+.our-products .find-more-btn button a {
+  text-decoration: none;
+  color: inherit;
+}
 .our-products .find-more-btn button:hover {
   background-color: #3f4e6f;
 }
