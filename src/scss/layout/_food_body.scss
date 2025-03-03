@@ -52,7 +52,25 @@
       	text-transform: uppercase;
       	letter-spacing: 0.5px;
 	}
+	h4, .food-description p {
+        transition: opacity 0.3s ease-out;
+        &.fade-out {
+            opacity: 0;
+        }
+        &.fade-in {
+            opacity: 1;
+        }
+    }
 
+    .image-circle img {
+        transition: opacity 0.3s ease-out;
+        &.fade-out {
+            opacity: 0;
+        }
+        &.fade-in {
+            opacity: 1;
+        }
+    }
 	// image and food wrapper
 	.food-img-text {
 		display: flex;
@@ -98,6 +116,7 @@
 				top: 0px;
 				left: 0px;
 				border: 5px solid white;
+				background-color: white;
 			  
 				img {
 				  width: 100%;
@@ -114,7 +133,18 @@
 	}
 }
 
+.food-card {
+    // ... existing styles ...
 
+    &.active {
+        border-color: $colourPrimary;
+    }
+
+    // Move the hover effect to only trigger when not active
+    &:not(.active):hover {
+        border-color: $colourPrimary;
+    }
+}
 
 
 

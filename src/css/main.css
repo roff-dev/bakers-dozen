@@ -411,6 +411,24 @@ footer {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+.food-information-section h4, .food-information-section .food-description p {
+  transition: opacity 0.3s ease-out;
+}
+.food-information-section h4.fade-out, .food-information-section .food-description p.fade-out {
+  opacity: 0;
+}
+.food-information-section h4.fade-in, .food-information-section .food-description p.fade-in {
+  opacity: 1;
+}
+.food-information-section .image-circle img {
+  transition: opacity 0.3s ease-out;
+}
+.food-information-section .image-circle img.fade-out {
+  opacity: 0;
+}
+.food-information-section .image-circle img.fade-in {
+  opacity: 1;
+}
 .food-information-section .food-img-text {
   display: flex;
   flex-direction: row;
@@ -453,6 +471,7 @@ footer {
   top: 0px;
   left: 0px;
   border: 5px solid white;
+  background-color: white;
 }
 .food-information-section .food-img-text .circle-container .image-circle img {
   width: 100%;
@@ -462,6 +481,13 @@ footer {
 .food-information-section .food-img-text .food-description {
   padding-left: 15%;
   color: #52658f;
+}
+
+.food-card.active {
+  border-color: #52658f;
+}
+.food-card:not(.active):hover {
+  border-color: #52658f;
 }
 
 .our-products {
