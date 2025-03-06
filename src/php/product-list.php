@@ -22,20 +22,28 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <option value="stock">In Stock First</option>
                     </select>
                 </div>
-                <button class="favorites-toggle" id="favorites-toggle">
+                <button class="favourites-toggle" id="favourites-toggle">
                     <i class="fa-regular fa-star"></i>
-                    <span>Favorites</span>
+                    <span>Favourites</span>
                 </button>
             </div>
         </div>
+        <div id="no-favourites-message" class="no-favourites-message">
+                <div class="empty-favourites-content">
+                    <i class="fa-regular fa-star"></i>
+                    <p class="empty-favourites-title">You have no favourite foods :(</p>
+                    <p class="empty-favourites-subtitle">Press the Favourite icon on a product to add it to the list</p>
+                </div>
+            </div>
         <div class="product-grid">
+            
             <?php foreach ($products as $product): ?>
                 <div class="product-card" 
                      data-product="<?php echo htmlspecialchars(json_encode($product)); ?>"
                      data-name="<?php echo htmlspecialchars($product['product_name']); ?>"
                      data-price="<?php echo htmlspecialchars($product['price']); ?>"
                      data-stock="<?php echo htmlspecialchars($product['quantity']); ?>">
-                    <div class="favorite-icon">
+                    <div class="favourite-icon">
                         <i class="fa-star fa-regular"></i>
                     </div>
                     <div class="product-image">
@@ -84,48 +92,48 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeBtn = document.querySelector('.close-modal');
     const productCards = document.querySelectorAll('.product-card');
     const filterSelect = document.getElementById('product-filter');
-    const favoritesToggle = document.getElementById('favorites-toggle');
+    const favouritesToggle = document.getElementById('favourites-toggle');
     const productGrid = document.querySelector('.product-grid');
     
-    // Initialize favorites from localStorage
-    let favorites = new Set(JSON.parse(localStorage.getItem('favorites') || '[]'));
+    // Initialize favourites from localStorage
+    let favourites = new Set(JSON.parse(localStorage.getItem('favourites') || '[]'));
     
-    // Update favorite icons based on stored favorites
-    function updateFavoriteIcons() {
+    // Update favourite icons based on stored favourites
+    function updateFavouriteIcons() {
         productCards.forEach(card => {
             const productData = JSON.parse(card.dataset.product);
-            const isFavorite = favorites.has(productData.product_name);
+            const isFavourite = favourites.has(productData.product_name);
             const starIcon = card.querySelector('.fa-star');
-            starIcon.classList.toggle('fa-solid', isFavorite);
-            starIcon.classList.toggle('fa-regular', !isFavorite);
+            starIcon.classList.toggle('fa-solid', isFavourite);
+            starIcon.classList.toggle('fa-regular', !isFavourite);
         });
     }
     
-    // Initialize favorite icons
-    updateFavoriteIcons();
+    // Initialize favourite icons
+    updateFavouriteIcons();
     
-    // Handle favorite toggling
+    // Handle favourite toggling
     productCards.forEach(card => {
-        const favoriteIcon = card.querySelector('.favorite-icon');
-        favoriteIcon.addEventListener('click', (e) => {
+        const favouriteIcon = card.querySelector('.favourite-icon');
+        favouriteIcon.addEventListener('click', (e) => {
             e.stopPropagation(); // Prevent modal from opening
             const productData = JSON.parse(card.dataset.product);
             const productName = productData.product_name;
             
-            if (favorites.has(productName)) {
-                favorites.delete(productName);
+            if (favourites.has(productName)) {
+                favourites.delete(productName);
             } else {
-                favorites.add(productName);
+                favourites.add(productName);
             }
             
             // Update localStorage
-            localStorage.setItem('favorites', JSON.stringify([...favorites]));
-            updateFavoriteIcons();
+            localStorage.setItem('favourites', JSON.stringify([...favourites]));
+            updateFavouriteIcons();
         });
         
         // Show product details in modal
         card.addEventListener('click', function(e) {
-            if (!e.target.closest('.favorite-icon')) {
+            if (!e.target.closest('.favourite-icon')) {
                 const productData = JSON.parse(this.dataset.product);
                 document.getElementById('modal-product-image').src = productData.image_url;
                 document.getElementById('modal-product-image').alt = productData.product_name;
@@ -174,17 +182,30 @@ document.addEventListener('DOMContentLoaded', function() {
         cards.forEach(card => productGrid.appendChild(card));
     });
     
-    // Toggle favorites view
-    favoritesToggle.addEventListener('click', function() {
+    // Toggle favourites view
+    favouritesToggle.addEventListener('click', function() {
         this.classList.toggle('active');
+        const noFavouritesMessage = document.getElementById('no-favourites-message');
+        let visibleProducts = 0;
+
         productCards.forEach(card => {
             const productData = JSON.parse(card.dataset.product);
             if (this.classList.contains('active')) {
-                card.style.display = favorites.has(productData.product_name) ? '' : 'none';
+                const isFavourite = favourites.has(productData.product_name);
+                card.style.display = isFavourite ? '' : 'none';
+                if (isFavourite) visibleProducts++;
             } else {
                 card.style.display = '';
+                visibleProducts++;
             }
         });
+
+        // Show/hide no favourites message
+        if (this.classList.contains('active') && visibleProducts === 0) {
+            noFavouritesMessage.style.display = 'block';
+        } else {
+            noFavouritesMessage.style.display = 'none';
+        }
     });
     
     // Modal close handlers

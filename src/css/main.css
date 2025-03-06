@@ -619,7 +619,7 @@ footer {
   border-color: #f7882f;
 }
 
-.favorites-toggle {
+.favourites-toggle {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -632,18 +632,18 @@ footer {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.favorites-toggle i {
+.favourites-toggle i {
   font-size: 1rem;
 }
-.favorites-toggle:hover {
+.favourites-toggle:hover {
   background-color: #52658f;
   color: white;
 }
-.favorites-toggle.active {
+.favourites-toggle.active {
   background-color: #52658f;
   color: white;
 }
-.favorites-toggle.active i {
+.favourites-toggle.active i {
   color: #f7882f;
 }
 
@@ -652,6 +652,41 @@ footer {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2rem;
   padding: 1rem;
+}
+
+.no-favourites-message {
+  display: none;
+  width: 100%;
+  min-height: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.empty-favourites-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.empty-favourites-content i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333a56;
+}
+.empty-favourites-content .empty-favourites-title {
+  font-size: 1.1rem;
+  color: #52658f;
+  margin: 0;
+}
+.empty-favourites-content .empty-favourites-subtitle {
+  font-size: 0.9rem;
+  color: #333a56;
+  margin-top: 0.5rem;
 }
 
 .product-card {
@@ -667,10 +702,10 @@ footer {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(51, 58, 86, 0.2);
 }
-.product-card:hover .favorite-icon {
+.product-card:hover .favourite-icon {
   opacity: 1;
 }
-.product-card .favorite-icon {
+.product-card .favourite-icon {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -687,15 +722,15 @@ footer {
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(51, 58, 86, 0.2);
 }
-.product-card .favorite-icon i {
+.product-card .favourite-icon i {
   color: #333a56;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
-.product-card .favorite-icon i.fa-solid {
+.product-card .favourite-icon i.fa-solid {
   color: #f7882f;
 }
-.product-card .favorite-icon:hover i {
+.product-card .favourite-icon:hover i {
   transform: scale(1.1);
 }
 .product-card .product-image {
