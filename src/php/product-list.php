@@ -2,7 +2,7 @@
 include '../php/connection.php';
 
 // Query the database to fetch all product details
-$stmt = $pdo->query("SELECT image_url, product_name, price, quantity FROM products");
+$stmt = $pdo->query("SELECT image_url, product_name, price, quantity, recipe_url FROM products");
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -78,11 +78,15 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <p id="modal-product-status"></p>
                     <!-- Placeholder for recipe and ingredients -->
                     <div class="future-content">
-                        <p class="coming-soon">Recipe and ingredients coming soon!</p>
+                        <p class="coming-soon">Recipe and ingredients come from an external source, if they are incorrect... cry more i guess</p>
                     </div>
                 </div>
             </div>
+            <div class="product-recipes">
+                <iframe id="recipe-frame" frameborder="0" style="width: 100%; height: 450px;"></iframe>
+            </div>
         </div>
+        
     </div>
 </section>
 
@@ -94,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterSelect = document.getElementById('product-filter');
     const favouritesToggle = document.getElementById('favourites-toggle');
     const productGrid = document.querySelector('.product-grid');
+    const recipeFrame = document.getElementById('recipe-frame');
     
     // Initialize favourites from localStorage
     let favourites = new Set(JSON.parse(localStorage.getItem('favourites') || '[]'));
@@ -141,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('modal-product-price').textContent = `£${Number(productData.price).toFixed(2)}`;
                 document.getElementById('modal-product-status').textContent = 
                     productData.quantity > 0 ? 'In Stock' : 'Out of Stock';
+                recipeFrame.src = productData.recipe_url;
                 modal.style.display = 'block';
             }
         });
