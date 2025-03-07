@@ -2,6 +2,7 @@
 <!-- main body section -->
 <section>
     <!-- FOOD CARD section -->
+    <div class="container">
     <div class="food-card-container">
         <div class="food-card" data-type="bread">
             <i class="fa-solid fa-bread-slice"></i>
@@ -34,6 +35,7 @@
                 <p></p>
             </div>
         </div>
+    </div>
     </div>
 </section>
 

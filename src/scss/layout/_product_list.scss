@@ -4,13 +4,13 @@
     padding: 4rem 0;
     background-color: $colourSecondary;
 
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-    }
+    
 }
-
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
 .product-header {
     display: flex;
     justify-content: space-between;
