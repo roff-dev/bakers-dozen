@@ -84,6 +84,11 @@
             cursor: pointer;
             letter-spacing: 2px;
 
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
             &:hover {
                 background-color: darken($color: $colourPrimary, $amount: 10);
             }

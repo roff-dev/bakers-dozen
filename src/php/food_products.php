@@ -7,6 +7,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <section>
     <div class="our-products">
+        <div class="container">
         <h4 class="h4">our products</h4>
         <?php
 // Start the product carousel
@@ -25,7 +26,8 @@ foreach ($products as $product) {
 echo '</div>';
 ?>
         <div class="find-more-btn">
-            <button>find out more</button>
+            <button><a href="find-out-more.php">find out more</a></button>
+        </div>
         </div>
     </div>
 </section>
