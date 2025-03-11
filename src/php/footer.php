@@ -43,4 +43,5 @@
     <script src="../src/js/order_form.js"></script>
     <script src="../src/js/review.js"></script>
     <script src="../src/js/products.js"></script>
+    <script src="../src/js/food_buttons.js"></script>
 </html>
