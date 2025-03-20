@@ -598,6 +598,15 @@ footer {
   padding-right: 10%;
 }
 
+.form-products-wrapper {
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.075);
+  border: 1px solid #333a56;
+  background-color: #f7f5e6;
+}
+
 .forms-container {
   padding-left: 10%;
   padding-right: 10%;

@@ -10,8 +10,7 @@ function validateForm() {
    let addressForm = document.forms["orderForm"]["address"].value;
    let phonenumberForm = document.forms["orderForm"]["telephone"].value;
    let emailaddressForm = document.forms["orderForm"]["email"].value;
-   let subjectForm = document.forms["orderForm"]["subject"].value;
-   let messageForm = document.forms["orderForm"]["message"].value;
+   let notesForm = document.forms["orderForm"]["notes"].value;
 
 
    // Reset all previous errors
@@ -41,15 +40,9 @@ function validateForm() {
      isValid = false;
    }
 
-  // Validate Email Address
-   if (subjectForm.value == "") {
-     $(subjectForm).addClass('has-error');
-     isValid = false;
-   }
-
    // Validate Message
-   if (messageForm.value == "") {
-     $(messageForm).addClass('has-error');
+   if (notesForm.value == "") {
+     $(notesForm).addClass('has-error');
      isValid = false;
    }
 
