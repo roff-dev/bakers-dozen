@@ -55,35 +55,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Validate subject
-    if (empty($_POST["subject"])) {
-        $errors['subject'] = "Subject is required";
-        $hasErrors = true;
-    } else {
-        $subject = clean_input($_POST["subject"]);
-    }
-
     // Validate message
-    if (empty($_POST["message"])) {
-        $errors['message'] = "Message is required";
+    if (empty($_POST["notes"])) {
+        $errors['notes'] = "Notes is required";
         $hasErrors = true;
     } else {
-        $message = clean_input($_POST["message"]);
+        $notes = clean_input($_POST["notes"]);
     }
 
       // If there are no errors, insert the data into the database
       if (!$hasErrors) {
         try {
             // Prepare SQL insert statement
-            $stmt = $pdo->prepare("INSERT INTO orders (name, address, email, telephone, subject, message) VALUES (:name, :address, :email, :telephone, :subject, :message)");
+            $stmt = $pdo->prepare("INSERT INTO orders (name, address, email, telephone, notes) VALUES (:name, :address, :email, :telephone, :notes)");
 
             // Bind parameters to the prepared statement
             $stmt->bindParam(':name', $name);
             $stmt->bindParam(':address', $address);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':telephone', $telephone);
-            $stmt->bindParam(':subject', $subject);
-            $stmt->bindParam(':message', $message);
+            $stmt->bindParam(':notes', $notes);
 
             // Execute the insert query
             $stmt->execute();
