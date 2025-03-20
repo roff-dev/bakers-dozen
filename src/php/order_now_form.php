@@ -25,11 +25,11 @@ include 'connection.php';
             <input class="form form-control" id="telephone" type="text" name="telephone" placeholder="Phone Number*" value="" required>
         </div>
 
-        <div class="form-bottom form-products-wrapper">
+        <div class="form-products-wrapper">
             <?php 
-            // Query the database to fetch the products
-            $stmt = $pdo->query("SELECT image_url, product_name FROM products");
-            $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                // Query the database to fetch all product details
+                $stmt = $pdo->query("SELECT image_url, product_name, price, quantity, recipe_url FROM products");
+                $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             ?>
 
             <div class="form-product-grid">  
