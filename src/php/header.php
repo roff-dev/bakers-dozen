@@ -6,6 +6,10 @@
     <title>Bakers Dozen</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../src/css/main.css">
     <script src="https://kit.fontawesome.com/80735aad70.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -18,7 +22,7 @@
     <header>
         <nav class="main-nav">
             <div class="nav-content">
-                <h1><a href="../../public/index.php">Baker's Dozen</a></h1>
+                <h1 class="cursive-header"><a href="../../public/index.php">Baker's Dozen</a></h1>
                 <ul class="nav-links">
                     <li><a href="">ABOUT</a></li>
                     <li><a href="../../public/find-out-more.php">PRODUCTS</a></li>

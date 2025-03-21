@@ -12,6 +12,12 @@ ul {
   letter-spacing: 0.5px;
 }
 
+.cursive-header {
+  font-family: "Great Vibes", cursive;
+  font-weight: 600;
+  font-style: normal;
+}
+
 .main-nav {
   display: -webkit-box;
   display: -ms-flexbox;
