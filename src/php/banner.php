@@ -7,6 +7,6 @@
             <BR>
             HEART OF NORWICH
         </p>
-        <a href="#" class="main-button">ORDER NOW</a>
+        <a href="../../public/order_now.php" class="main-button">ORDER NOW</a>
     </div>
 </section>
