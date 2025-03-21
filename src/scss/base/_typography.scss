@@ -10,3 +10,10 @@ ul {
       text-transform: uppercase;
       letter-spacing: 0.5px;
 }
+
+// css styling to add cursive font for headers
+.cursive-header {
+    font-family: $font-family-cursive;
+    font-weight: 600;
+    font-style: normal;
+}
