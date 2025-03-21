@@ -76,6 +76,48 @@ h1 {
   font-size: 1.8rem;
 }
 
+@media (min-width: 768px) {
+  .main-nav {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-nav .nav-content {
+    flex-direction: row;
+  }
+  h1 {
+    font-size: 2rem;
+    flex: 2;
+    margin: 0;
+    text-align: center;
+  }
+  .nav-links {
+    flex: 4;
+    flex-direction: row;
+    margin: 0;
+    align-items: center;
+  }
+  .nav-links li {
+    flex: 1;
+    margin: 0;
+  }
+}
+@media (min-width: 992px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+  .nav-links li {
+    padding: 0 20px 0 10px;
+  }
+}
+@media (min-width: 1260px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+  .nav-links li a {
+    font-size: 1.3rem;
+  }
+}
 .banner {
   display: flex;
   position: relative;
@@ -139,30 +181,6 @@ h1 {
   }
 }
 @media (min-width: 768px) {
-  .main-nav {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  .main-nav .nav-content {
-    flex-direction: row;
-  }
-  h1 {
-    font-size: 2rem;
-    flex: 2;
-    margin: 0;
-    text-align: center;
-  }
-  .nav-links {
-    flex: 4;
-    flex-direction: row;
-    margin: 0;
-    align-items: center;
-  }
-  .nav-links li {
-    flex: 1;
-    margin: 0;
-  }
   .banner-circle {
     height: 140%;
   }
@@ -183,12 +201,6 @@ h1 {
   }
 }
 @media (min-width: 992px) {
-  h1 {
-    font-size: 2.8rem;
-  }
-  .nav-links li {
-    padding: 0 20px 0 10px;
-  }
   .banner-circle {
     height: 160%;
   }
@@ -204,12 +216,6 @@ h1 {
   }
 }
 @media (min-width: 1260px) {
-  h1 {
-    font-size: 3.5rem;
-  }
-  .nav-links li a {
-    font-size: 1.3rem;
-  }
   .banner-circle {
     height: 250%;
     position: relative;
