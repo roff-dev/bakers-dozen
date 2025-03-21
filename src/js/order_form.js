@@ -120,4 +120,20 @@ function validateForm() {
    $('.alert.alert-danger-hidden').removeClass('alert-danger-hidden').addClass('alert alert-success').html(message).show();
 }
 
+// Function to calculate the total price based on selected quantities
+function calculateTotal() {
+  let totalPrice = 0;
+
+  // Loop through all the quantity inputs
+  document.querySelectorAll('.quantity-input').forEach(input => {
+      const price = parseFloat(input.getAttribute('data-price'));
+      const quantity = parseInt(input.value) || 0; // Default to 0 if not a number
+
+      totalPrice += price * quantity;
+  });
+
+  // Update the total price on the page
+  document.getElementById('total-price').innerText = totalPrice.toFixed(2);
+}
+
  

@@ -19,5 +19,5 @@
         <i class="fa-solid fa-quote-right"></i>
     </div>
     <h3>Proudly Baking For Your Party, Your Event, And Your Breakfast</h3>
-    <button class="order-review-btn">Order Now</button>
+    <a href="../../public/order_now.php" class="order-review-btn">Order Now</a>
 </div>
