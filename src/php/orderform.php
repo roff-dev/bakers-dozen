@@ -48,45 +48,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hasErrors = true;
     } else {
         $telephone = clean_input($_POST["telephone"]);
-        // Example validation for telephone (use the same regex you had)
         if (!preg_match('/^\+?[0-9]{0,3}[-\s\.]?\(?[0-9]{3}\)?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/', $telephone)) {
             $errors['telephone'] = "Invalid telephone number format";
             $hasErrors = true;
         }
     }
 
-    // Validate message
+    // Validate message (notes)
     if (empty($_POST["notes"])) {
-        $errors['notes'] = "Notes is required";
+        $errors['notes'] = "Notes are required";
         $hasErrors = true;
     } else {
         $notes = clean_input($_POST["notes"]);
     }
 
-      // If there are no errors, insert the data into the database
-      if (!$hasErrors) {
+    // Validate total price
+    if (empty($_POST['total_price']) || !is_numeric($_POST['total_price'])) {
+        $errors['total_price'] = "Invalid total price"; 
+        $hasErrors = true;
+    } else {
+        $totalPrice = $_POST['total_price'];
+    }
+
+    // Retrieve the discount value from the form
+    $discount = isset($_POST["discount"]) ? $_POST["discount"] : NULL;
+
+    // If there are no errors, insert the data into the database
+    if (!$hasErrors) {
         try {
             // Prepare SQL insert statement
-            $stmt = $pdo->prepare("INSERT INTO orders (name, address, email, telephone, notes) VALUES (:name, :address, :email, :telephone, :notes)");
+            $stmt = $pdo->prepare("INSERT INTO orders (name, address, email, telephone, notes, total_price, discount) 
+            VALUES (:name, :address, :email, :telephone, :notes, :total_price, :discount)");
 
-            // Bind parameters to the prepared statement
             $stmt->bindParam(':name', $name);
             $stmt->bindParam(':address', $address);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':telephone', $telephone);
             $stmt->bindParam(':notes', $notes);
+            $stmt->bindParam(':total_price', $totalPrice);
+            $stmt->bindParam(':discount', $discount, PDO::PARAM_NULL); // Ensure discount is correctly bound
 
-            // Execute the insert query
+            // Execute the query
             $stmt->execute();
 
-            // Return success response in JSON format
+            // Return success response
             echo json_encode(['success' => true]);
         } catch (PDOException $e) {
             // Handle database error
             echo json_encode(['success' => false, 'error' => 'Database error: ' . $e->getMessage()]);
         }
     } else {
-        // If there are validation errors, return the errors in JSON format
+        // If validation fails, return the validation errors as JSON
         echo json_encode(['success' => false, 'errors' => $errors]);
     }
+    
+    // End the script to avoid any further output
+    exit;
 }

@@ -1,99 +1,98 @@
-const $form_TelNo = $('#telephone'); 
-const $form_EmailAddress = $('#email');
-
-// Checks if fields are empty in form elements
 function validateForm() {
-   let isValid = true;
+  let isValid = true;
 
-   // Get the form fields
-   let nameForm = document.forms["orderForm"]["name"].value;
-   let addressForm = document.forms["orderForm"]["address"].value;
-   let phonenumberForm = document.forms["orderForm"]["telephone"].value;
-   let emailaddressForm = document.forms["orderForm"]["email"].value;
-   let notesForm = document.forms["orderForm"]["notes"].value;
+  // Get the form fields
+  let nameForm = document.forms["orderForm"]["name"];
+  let addressForm = document.forms["orderForm"]["address"];
+  let phonenumberForm = document.forms["orderForm"]["telephone"];
+  let emailaddressForm = document.forms["orderForm"]["email"];
+  let notesForm = document.forms["orderForm"]["notes"];
+  let totalPriceForm = document.getElementById("total-price").innerText;
+  
+  // Reset all previous errors
+  $('.form-control').removeClass('has-error');
 
+  // Validate Name
+  if (nameForm.value == "") {
+    $(nameForm).addClass('has-error');
+    isValid = false;
+  }
 
-   // Reset all previous errors
-   $('.form-control').removeClass('has-error');
+  // Validate Address
+  if (addressForm.value == "") {
+    $(addressForm).addClass('has-error');
+    isValid = false;
+  }
 
-   // Validate First Name
-   if (nameForm.value == "") {
-     $(nameForm).addClass('has-error');
-     isValid = false;
-   }
+  // Validate Phone Number
+  if (phonenumberForm.value == "") {
+    $(phonenumberForm).addClass('has-error');
+    isValid = false;
+  }
 
-    // Validate Last Name
-   if (addressForm.value == "") {
-     $(addressForm).addClass('has-error');
-     isValid = false;
-   }
+  // Validate Email Address
+  if (emailaddressForm.value == "") {
+    $(emailaddressForm).addClass('has-error');
+    isValid = false;
+  }
 
-   // Validate Phone Number
-   if (phonenumberForm.value == "") {
-     $(phonenumberForm).addClass('has-error');
-     isValid = false;
-   }
+  // Validate Notes
+  if (notesForm.value == "") {
+    $(notesForm).addClass('has-error');
+    isValid = false;
+  }
 
-   // Validate Email Address
-   if (emailaddressForm.value == "") {
-     $(emailaddressForm).addClass('has-error');
-     isValid = false;
-   }
+  // Validate Total Price (Ensure total price is greater than 0)
+  if (parseFloat(totalPriceForm) <= 0) {
+      $('#total-price').addClass('has-error');
+      isValid = false;
+  }
 
-   // Validate Message
-   if (notesForm.value == "") {
-     $(notesForm).addClass('has-error');
-     isValid = false;
-   }
+  // Return if the form is valid or not
+  return isValid;
+}
 
-   // Return if the form is valid or not
-   return isValid;
- }
+ // Correctly define the submit button
+const $submitBtn = $('#submitBtn');
 
- // Listen for the submit button click
- const $submitBtn = $('#submitBtn');
+// Listen for the submit button click
+$submitBtn.on('click', function(event) {
+  // First, run JavaScript form validation
+  if (validateForm() && validateDiscount()) {
+      // If the form is valid, prevent the default form submission
+      event.preventDefault();
 
- $submitBtn.on('click', function(event) {
-   // First, run JavaScript form validation
-   if (validateForm()) {
-     // If the form is valid, prevent the default form submission
-     event.preventDefault();
+      // Get the total price and discount
+      const totalPrice = document.getElementById('total-price').innerText;
+      const discount = document.getElementById('discount').value || 0;
 
-     // Gather the form data
-     const formData = $('#order-form').serialize(); // Serializes the form fields into a query string
+      // Append totalPrice and discount to formData
+      const formData = $('#order-form').serialize() + `&total_price=${totalPrice}&discount=${discount}`;
 
-     $.ajax({
-         url: '../../src/php/orderform.php', // Make sure this path is correct
-         type: 'POST',
-         data: formData, // Send the serialized form data
-        success: function(response) {
-          // Log the response for debugging
-          console.log(response);
-      
-          // Check if the response was successful (PHP validation passed)
-           if (response.success) {
-             // Display a success message in the alert container
-             displaySuccessMessage('Your message has been sent successfully!');
+      $.ajax({
+          url: '../../src/php/orderform.php', // Make sure this path is correct
+          type: 'POST',
+          data: formData, // Send the serialized form data
+          success: function(response) {
+              console.log('Raw response:', response);  // Log the raw response
 
-             // Reset the form fields
-             $('#order-form')[0].reset(); 
-           } else {
-             // If there are errors, display them using the displayErrors function
-             displayErrors(response.errors);
-           }
-         },
-         error: function(xhr, status, error) {
-           // Handle any errors that occur during the AJAX request
-           console.error('Error occurred:', error);
-           alert('An error occurred while submitting the form.');
-         }
-       });
-   } else {
-     // If JS validation fails, prevent form submission
-     event.preventDefault();
-   }
-
- });
+              if (response.success) {
+                  displaySuccessMessage('Your order has been placed successfully!');
+                  $('#order-form')[0].reset(); // Reset form
+              } else {
+                  displayErrors(response.errors); // Display validation errors
+              }
+          },
+          error: function(xhr, status, error) {
+              console.error('AJAX error:', error);
+              alert('An error occurred while submitting the form.');
+          }
+      });
+  } else {
+      // If JS validation fails, prevent form submission
+      event.preventDefault();
+  }
+});
 
  // Function to display errors returned by PHP
   function displayErrors(errors) {
@@ -120,4 +119,44 @@ function validateForm() {
    $('.alert.alert-danger-hidden').removeClass('alert-danger-hidden').addClass('alert alert-success').html(message).show();
 }
 
- 
+// Function to calculate the total price based on selected quantities and apply discount
+function calculateTotal() {
+  let totalPrice = 0;
+  
+  // Loop through all the quantity inputs
+  document.querySelectorAll('.quantity-input').forEach(input => {
+      const price = parseFloat(input.getAttribute('data-price'));
+      const quantity = parseInt(input.value) || 0; // Default to 0 if not a number
+
+      totalPrice += price * quantity;
+  });
+
+  // Get the discount value (percentage)
+  let discount = parseFloat(document.getElementById('discount').value) || 0;
+
+  // Calculate the discount amount
+  let discountAmount = (totalPrice * discount) / 100;
+
+  // Subtract the discount from the total price
+  let finalPrice = totalPrice - discountAmount;
+
+  // Update the total price on the page
+  document.getElementById('total-price').innerText = finalPrice.toFixed(2);
+}
+
+// Call calculateTotal whenever there's a change in quantity or discount
+document.querySelectorAll('.quantity-input').forEach(input => {
+  input.addEventListener('change', calculateTotal);
+});
+
+document.getElementById('discount').addEventListener('input', calculateTotal);
+
+// Validate discount to ensure it's between 0 and 100
+function validateDiscount() {
+  let discount = parseFloat(document.getElementById('discount').value) || 0;
+  if (discount < 0 || discount > 100) {
+      alert("Discount must be between 0 and 100.");
+      return false;
+  }
+  return true;
+}
