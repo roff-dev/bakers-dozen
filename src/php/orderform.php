@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(':telephone', $telephone);
             $stmt->bindParam(':notes', $notes);
             $stmt->bindParam(':total_price', $totalPrice);
-            $stmt->bindParam(':discount', $discount, PDO::PARAM_NULL); // Ensure discount is correctly bound
+            $stmt->bindParam(':discount', $discount); 
 
             // Execute the query
             $stmt->execute();
