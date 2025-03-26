@@ -65,11 +65,16 @@ include 'connection.php';
         <div class="form-bottom">
             <textarea id="notes" class="form form-end form-control"  name="notes" placeholder="Additional Notes*" value=""></textarea>
         </div>
+        <div class="form-bottom">
+            <label for="discount">Discount (%)</label>
+            <input class="form form-control" id="discount" type="number" name="discount" placeholder="Enter discount" min="0" max="100" value="">
+        </div>
         <div class="form-total-price">
             <h3>Total Price: £<span id="total-price">0.00</span></h3>
+            <input type="hidden" id="total-price-input" name="total_price" value="0.00">
         </div>
         <div class="form-btn-container">
-            <button class="btn-submit" id="submitBtn" type="button" value="Submit">Submit</button>
+            <button class="btn-submit" id="submitBtn" type="submit" value="Submit" onclick="calculateTotal()">Submit</button>
         </div>
     </form>
 
