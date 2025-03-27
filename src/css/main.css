@@ -161,6 +161,7 @@ h1 {
   display: inline-block;
   padding: 15px 40px;
   border-radius: 25px;
+  border: none;
   background-color: #f7882f;
   color: white;
   text-decoration: none;
@@ -381,6 +382,81 @@ footer {
   text-align: center;
   bottom: 0;
   padding-bottom: 30px;
+}
+
+.testimonial-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  min-height: 80vh;
+  background-color: #f7f5e6;
+}
+.testimonial-page h1 {
+  font-size: 2em;
+  max-height: 100px;
+  margin-top: 50px;
+}
+
+.testimonial-page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100%;
+}
+.testimonial-page-content .testimonials,
+.testimonial-page-content .add-testimonial {
+  margin-top: 50px;
+}
+
+.add-testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.testimonial-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.testimonial-form .testimonial-form-div {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.testimonial-form .testimonial-form-div input,
+.testimonial-form .testimonial-form-div textarea {
+  width: 80%;
+  max-width: 800px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.testimonial-form-button {
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 25px;
+  border: none;
+  background-color: #f7882f;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1rem;
+  max-width: 200px;
+  text-align: center;
+}
+.testimonial-form-button:hover {
+  background-color: #ea6d09;
 }
 
 .food-card-container {

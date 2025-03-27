@@ -474,6 +474,11 @@ footer {
   padding-bottom: 30px;
 }
 
+.testimonials-page {
+  padding: 30px;
+  background-color: red;
+}
+
 .food-card-container {
   display: -webkit-box;
   display: -ms-flexbox;
