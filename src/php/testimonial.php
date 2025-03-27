@@ -1,7 +1,8 @@
 <?php
 include '../php/connection.php';
 
-$stmt = $pdo->query("SELECT name, content, date_added FROM testimonials ORDER BY date_added DESC");
+// have set it so it will load a max of 5 random reviews from the database
+$stmt = $pdo->query("SELECT name, content, date_added FROM testimonials ORDER BY RAND() LIMIT 5");
 $result = $stmt->fetchAll();
 
 ?>
@@ -43,7 +44,7 @@ $result = $stmt->fetchAll();
                 </div>
                 <div class="testimonial-form-div">
                     <!-- <label for="testimonial">Your Review:</label> -->
-                    <textarea id="testimonial" name="testimonial" rows="5" placeholder="Your Review" required></textarea>
+                    <textarea id="testimonial-textarea" name="testimonial" rows="5" placeholder="Your Review" required></textarea>
                 </div>
                 <button class="testimonial-form-button" type="submit">Submit Review</button>
             </form>

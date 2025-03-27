@@ -393,9 +393,11 @@ footer {
   background-color: #f7f5e6;
 }
 .testimonial-page h1 {
-  font-size: 2em;
+  font-size: 4em;
   max-height: 100px;
   margin-top: 50px;
+  font-family: "Great Vibes", cursive;
+  color: #52658f;
 }
 
 .testimonial-page-content {
@@ -410,12 +412,24 @@ footer {
   margin-top: 50px;
 }
 
+.testimonials {
+  max-width: 1200px;
+}
+.testimonials h4 {
+  font-size: 1.2em;
+}
+
 .add-testimonial {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+.add-testimonial h2 {
+  font-size: 3em;
+  font-family: "Great Vibes", cursive;
+  color: #52658f;
 }
 
 .testimonial-form {
@@ -439,6 +453,9 @@ footer {
   border-radius: 4px;
   font-size: 16px;
   font-family: inherit;
+}
+.testimonial-form .testimonial-form-div #testimonial-textarea {
+  height: 250px;
 }
 
 .testimonial-form-button {
