@@ -89,6 +89,8 @@
         width: 100%;
         margin-bottom: 20px;
         display: flex;
+        flex-direction: column;
+        align-items: center; 
         justify-content: center;
         input,
         textarea{
@@ -103,9 +105,11 @@
         #testimonial-textarea{
             height: 250px;
         }
+        .error-message{
+            align-items: flex-start;
+        }
     }
 }
-
 
 .testimonial-form-button{
     @include main-button;
@@ -122,4 +126,44 @@
             font-size: 4.5em;
         }
     }
+}
+
+// form pop up messages 
+
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.success-message {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+
+.fade-out {
+    opacity: 0;
+}
+
+.error-input {
+    border: 2px solid #c62828 !important;
+}
+
+.error-message {
+    color: #c62828;
+    font-size: 0.9em;
+    margin-top: 5px;
+    width: 80%;          // Match input width
+    max-width: 800px;    // Match input max-width
+    text-align: left;    // Align text to the left
+    margin-top: 5px;     // Space between input and error
+    color: #c62828;
+}
+
+.hidden {
+    display: none;
 }

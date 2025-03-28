@@ -466,6 +466,8 @@ footer {
   width: 100%;
   margin-bottom: 20px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 .testimonial-form .testimonial-form-div input,
@@ -480,6 +482,9 @@ footer {
 }
 .testimonial-form .testimonial-form-div #testimonial-textarea {
   height: 250px;
+}
+.testimonial-form .testimonial-form-div .error-message {
+  align-items: flex-start;
 }
 
 .testimonial-form-button {
@@ -508,6 +513,43 @@ footer {
     font-size: 4.5em;
   }
 }
+.message {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.success-message {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.error-input {
+  border: 2px solid #c62828 !important;
+}
+
+.error-message {
+  color: #c62828;
+  font-size: 0.9em;
+  margin-top: 5px;
+  width: 80%;
+  max-width: 800px;
+  text-align: left;
+  margin-top: 5px;
+  color: #c62828;
+}
+
+.hidden {
+  display: none;
+}
+
 .food-card-container {
   display: flex;
   justify-content: center;

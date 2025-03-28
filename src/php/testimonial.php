@@ -13,16 +13,6 @@ $result = $stmt->fetchAll();
         <a href="#add-testimonial">Leave a review</a>
     </div>
     <div class="testimonial-page-content">
-        
-        <?php
-        // success message on succesful form submit
-        if (isset($_GET['success']) && $_GET['success'] == 1){
-            echo '<div class="success-message>"
-                    Thank you for giving your feedback!
-                </div>';
-        }
-        ?>
-
         <div class="testimonials">
             <?php
                 if(count($result) > 0){
@@ -40,14 +30,23 @@ $result = $stmt->fetchAll();
 
         <div id="add-testimonial">
             <h2>Share your experience</h2>
-            <form class="testimonial-form" action="submit_testimonial.php" method="POST">
+            <?php
+            // Success message on successful form submit
+            if (isset($_GET['success']) && $_GET['success'] == 1){
+                echo '<div class="message success-message">
+                        Thank you for giving your feedback!
+                    </div>';
+            }
+            ?>
+            <div class="testimonial-error-container" style="display: none;"></div>
+            <form class="testimonial-form" id="testimonial-form" action="/src/php/submit_testimonial.php" method="POST">
                 <div class="testimonial-form-div">
-                    <!-- <label for="name">Your Name:</label> -->
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="text" id="name" name="name" placeholder="Your Name">
+                    <div class="error-message hidden" id="name-error"></div>
                 </div>
                 <div class="testimonial-form-div">
-                    <!-- <label for="testimonial">Your Review:</label> -->
-                    <textarea id="testimonial-textarea" name="testimonial" rows="5" placeholder="Your Review" required></textarea>
+                    <textarea id="testimonial-textarea" name="testimonial" rows="5" placeholder="Your Review"></textarea>
+                    <div class="error-message hidden" id="testimonial-error"></div>
                 </div>
                 <button class="testimonial-form-button" type="submit">Submit Review</button>
             </form>
