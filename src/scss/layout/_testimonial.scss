@@ -28,6 +28,12 @@
     border: solid 2px $colourPrimary;
     padding: 10px;
     margin-top: 40px;
+    // adding a background color change and glow on hover
+    &:hover {
+        background-color: white;
+        box-shadow: 0 0 10px rgba($colourPrimary, 0.8);
+    }
+
     a{
         text-decoration: none;
         color: $colourPrimary;

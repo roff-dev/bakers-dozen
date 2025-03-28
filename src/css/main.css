@@ -413,6 +413,10 @@ footer {
   padding: 10px;
   margin-top: 40px;
 }
+.testimonial-form-link:hover {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(82, 101, 143, 0.8);
+}
 .testimonial-form-link a {
   text-decoration: none;
   color: #52658f;
