@@ -16,14 +16,22 @@
 }
 
 .testimonial-page-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+
     min-height: 100%;
     .testimonials,
     .add-testimonial{
         margin-top: 50px;
+    }
+}
+
+.testimonial-form-link{
+    border: solid 2px $colourPrimary;
+    padding: 10px;
+    margin-top: 40px;
+    a{
+        text-decoration: none;
+        color: $colourPrimary;
+        font-weight: 600;
     }
 }
 
@@ -32,17 +40,34 @@
 /////////////////////////////////////
 
 .testimonials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 1200px;
     h4{
         font-size: 1.2em;
     }
 }
 
+.testimonial-page-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.review{
+    width: 80%;
+    margin: 40px 0;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /////////////////////////////////////
 /// FORM
 /////////////////////////////////////
 
-.add-testimonial{
+#add-testimonial{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,4 +109,17 @@
 
 .testimonial-form-button{
     @include main-button;
+}
+
+@media(min-width:1200px){
+    .testimonial-page{
+        h1{
+            font-size: 6em;
+        }
+    }
+    .add-testimonial{
+        h2{
+            font-size: 4.5em;
+        }
+    }
 }

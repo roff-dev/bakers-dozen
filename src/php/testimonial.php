@@ -9,6 +9,9 @@ $result = $stmt->fetchAll();
 
 <main class="testimonial-page">
     <h1>What our customers say</h1>
+    <div class="testimonial-form-link">
+        <a href="#add-testimonial">Leave a review</a>
+    </div>
     <div class="testimonial-page-content">
         
         <?php
@@ -35,7 +38,7 @@ $result = $stmt->fetchAll();
             ?>
         </div>
 
-        <div class="add-testimonial">
+        <div id="add-testimonial">
             <h2>Share your experience</h2>
             <form class="testimonial-form" action="submit_testimonial.php" method="POST">
                 <div class="testimonial-form-div">
