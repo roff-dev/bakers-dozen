@@ -26,7 +26,7 @@
                 <ul class="nav-links">
                     <li><a href="">ABOUT</a></li>
                     <li><a href="../../public/find-out-more.php">PRODUCTS</a></li>
-                    <li><a href="#">TESTIMONIALS</a></li>
+                    <li><a href="../../public/testimonial_page.php">TESTIMONIALS</a></li>
                     <li><a href="../../public/order_now.php">ORDER</a></li>
                     <li><a href="tel:" class="phone-icon"><i class="fa-solid fa-phone fa-flip-horizontal"></i></a></li>
                 </ul>
