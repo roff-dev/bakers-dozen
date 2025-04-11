@@ -28,7 +28,7 @@ include 'connection.php';
         <div class="form-products-wrapper">
             <?php 
                 // Query the database to fetch all product details
-                $stmt = $pdo->query("SELECT image_url, product_name, price, quantity, recipe_url FROM products");
+                $stmt = $pdo->query("SELECT product_id, image_url, product_name, price, quantity, recipe_url FROM products");
                 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             ?>
 
