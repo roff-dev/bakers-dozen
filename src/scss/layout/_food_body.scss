@@ -157,7 +157,11 @@
         margin-right: 0px;
     }
 }
-
+.food-information-section .food-img-text .food-description {
+	@media (max-width: 940px) {
+        padding-left: 0px;
+    }
+}
 
 
 

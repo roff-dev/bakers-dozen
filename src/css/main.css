@@ -688,6 +688,12 @@ footer {
   }
 }
 
+@media (max-width: 940px) {
+  .food-information-section .food-img-text .food-description {
+    padding-left: 0px;
+  }
+}
+
 .our-products {
   background-color: #f7f5e6;
   text-align: center;
