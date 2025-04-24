@@ -172,7 +172,7 @@ h1 {
   text-align: center;
 }
 .banner-content .main-button:hover {
-  background-color: #ea6d09;
+  background-color: rgb(234, 109.125, 9);
 }
 
 @media (max-width: 767px) {
@@ -506,7 +506,7 @@ footer {
   text-align: center;
 }
 .testimonial-form-button:hover {
-  background-color: #ea6d09;
+  background-color: rgb(234, 109.125, 9);
 }
 
 @media (min-width: 1200px) {
@@ -707,7 +707,7 @@ footer {
   position: relative;
 }
 .our-products .product-carousel .slick-prev:hover, .our-products .product-carousel .slick-next:hover {
-  background-color: #47536d;
+  background-color: rgb(70.9090909091, 83.3766233766, 109.0909090909);
 }
 .our-products .product-carousel .slick-prev::before, .our-products .product-carousel .slick-next::before {
   content: "";
@@ -738,7 +738,7 @@ footer {
   margin: 0 auto;
 }
 .our-products .product-carousel img:hover {
-  border: 4px solid #3f4e6f;
+  border: 4px solid rgb(63.4133333333, 78.1066666667, 110.5866666667);
 }
 .our-products .find-more-btn button {
   border-radius: 25px;
@@ -757,7 +757,7 @@ footer {
   color: inherit;
 }
 .our-products .find-more-btn button:hover {
-  background-color: #3f4e6f;
+  background-color: rgb(63.4133333333, 78.1066666667, 110.5866666667);
 }
 
 .form-paragraph-container {
@@ -793,8 +793,6 @@ footer {
 }
 
 .forms-container {
-  padding-left: 10%;
-  padding-right: 10%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -899,7 +897,7 @@ textarea:focus {
 
 .btn-submit:hover {
   cursor: pointer;
-  background-color: #ea6d09;
+  background-color: rgb(234, 109.125, 9);
 }
 
 @media (min-width: 768px) {
