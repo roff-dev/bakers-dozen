@@ -8,8 +8,12 @@
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom:100px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     h3 {
         color: $colourPrimary;
+        text-align: center;
         font-size: 1.2rem;
         font-weight: 600;
         text-transform: uppercase;
@@ -20,6 +24,10 @@
 .review-container{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
 }
 
 .review{
@@ -49,14 +57,16 @@
     text-decoration: none;
 }
 
-.fa-quote-left{
+i.fa-solid.fa-quote-left {
+    display: none;
     color: #333956;
     align-self: center;
     font-size: 2.5rem;
     padding-right: 20px;
 }
 
-.fa-quote-right{
+i.fa-solid.fa-quote-right {
+    display: none;
     color: #333956;
     align-self: center;
     font-size: 2.5rem;
@@ -64,7 +74,8 @@
 }
 
 .slides {
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
 }
 
 .slick-dots {
@@ -86,4 +97,14 @@
 .order-review-btn:hover {
     cursor: pointer;
     background-color: #da7727;
+}
+
+/// MEDIA QUERIES
+//////////////////////////////////////////////
+
+@media(min-width: 1200px){
+    i.fa-solid.fa-quote-left,
+    i.fa-solid.fa-quote-right {
+        display: block;
+    }
 }
