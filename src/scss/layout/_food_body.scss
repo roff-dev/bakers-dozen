@@ -146,6 +146,18 @@
     }
 }
 
+// media queries
+.food-img-text {
+	@media (max-width: 940px) {
+        flex-direction: column !important;
+    }
+}
+.food-information-section .food-img-text .circle-container {
+	@media (max-width: 940px) {
+        margin-right: 0px;
+    }
+}
+
 
 
 
