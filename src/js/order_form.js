@@ -119,32 +119,23 @@ $submitBtn.on('click', function(event) {
       // If the form is valid, prevent the default form submission
       event.preventDefault();
 
-      // Get the total price and discount
+      // Get form values
+      const name = $('#name').val();
+      const address = $('#address').val();
+      const email = $('#email').val();
+      const telephone = $('#telephone').val();
+      const notes = $('#notes').val();
       const totalPrice = document.getElementById('total-price').innerText;
       const discount = document.getElementById('discount').value || 0;
-
-      // Collect product quantities and ids
-      const productQuantities = [];
-      document.querySelectorAll('.quantity-input').forEach(input => {
-          const productId = input.getAttribute('data-product-id');
-          const quantity = input.value || 0;
-          if (quantity > 0) {
-              productQuantities.push({ productId, quantity });
-          }
-      });
-
-      // Append totalPrice, discount, and product quantities to formData
-      const formData = $('#order-form').serialize() + `&total_price=${totalPrice}&discount=${discount}&products=${JSON.stringify(productQuantities)}`;
 
       // Initialize the products array
       let products = [];
 
-      // Loop through all the product quantity inputs to collect selected quantities
+      // Collect product data
       document.querySelectorAll('.quantity-input').forEach(input => {
-        const productId = input.getAttribute('data-product-id'); // Get the product ID from the data attribute
-        const quantity = parseInt(input.value) || 0; // Get the quantity from the input value
-        const price = parseFloat(input.getAttribute('data-price')); // Get the price from the data attribute
-        const discount = parseFloat(document.getElementById('discount').value) || 0; // Get the discount from the input field
+        const productId = input.getAttribute('data-product-id');
+        const quantity = parseInt(input.value) || 0;
+        const price = parseFloat(input.getAttribute('data-price'));
 
         // Only include products with a quantity greater than 0
         if (quantity > 0) {
@@ -157,30 +148,61 @@ $submitBtn.on('click', function(event) {
         }
       });
 
-      // Log the products array to ensure it is populated correctly
-      console.log('Products:', products);
+      // Create the form data object
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('address', address);
+      formData.append('email', email);
+      formData.append('telephone', telephone);
+      formData.append('notes', notes);
+      formData.append('total_price', totalPrice);
+      formData.append('discount', discount);
+      formData.append('products', JSON.stringify(products));
 
+      // Log what we're about to send for debugging
+      console.log('Sending order with products:', products);
+
+      // Send the AJAX request
       $.ajax({
-        url: '../../src/php/orderform.php', 
+        url: '../src/php/orderform.php',
         type: 'POST',
-        data: formData, products: JSON.stringify(products), // Send the serialized form data
-        dataType: 'json', // Expecting a JSON response
+        data: formData,
+        processData: false,
+        contentType: false,
+        dataType: 'json',
         success: function(response) {
-            console.log('Raw response:', response); // Log the raw response
-    
+            console.log('Server response:', response);
+            
             if (response.success) {
-                displaySuccessMessage('Your order has been placed successfully!');
-                $('#order-form')[0].reset(); // Reset form
+                displaySuccessMessage('Order placed successfully! Order ID: ' + response.order_id);
+                $('#order-form')[0].reset();
+                calculateTotal(); // Reset the total display
             } else {
-                displayErrors(response.errors); // Display validation errors
+                if (response.errors) {
+                    displayErrors(response.errors);
+                } else if (response.error) {
+                    displayErrors({'general': response.error});
+                } else {
+                    displayErrors({'general': 'An unknown error occurred'});
+                }
             }
         },
         error: function(xhr, status, error) {
             console.error('AJAX error:', error);
-            alert('An error occurred while submitting the form. Please check the console for more details.');
-            console.log(xhr.responseText);  // Log the raw response from the server
+            console.log('Response text:', xhr.responseText);
+            
+            try {
+                const response = JSON.parse(xhr.responseText);
+                if (response.error) {
+                    displayErrors({'general': response.error});
+                } else {
+                    displayErrors({'general': 'Server error: ' + error});
+                }
+            } catch (e) {
+                displayErrors({'general': 'Could not process server response: ' + error});
+            }
         }
-    });
+      });
   } else {
       // If JS validation fails, prevent form submission
       event.preventDefault();
@@ -190,13 +212,20 @@ $submitBtn.on('click', function(event) {
 // Function to display errors returned by PHP
 function displayErrors(errors) {
     $('#alert').hide(); // Hide previous error messages
-
     $('.form-control').removeClass('has-error'); // Reset previous errors
 
     // Create HTML to display the error messages
     let errorHtml = '';
+    
     for (const field in errors) {
-        errorHtml += `<p class="alert-danger-active">${errors[field]}</p>`;
+        if (field === 'general') {
+            // Display general errors at the top
+            errorHtml += `<p class="alert-danger-active">${errors[field]}</p>`;
+        } else {
+            // Highlight specific form fields with errors
+            errorHtml += `<p class="alert-danger-active">${errors[field]}</p>`;
+            $(`#${field}`).addClass('has-error');
+        }
     }
 
     // Display the errors in the alert-danger div
