@@ -95,3 +95,10 @@
         }
     }
 }
+
+@media (max-width: 1140px) {
+    .our-products .product-carousel img {
+        width: 175px;
+        height: 175px;
+    }
+}

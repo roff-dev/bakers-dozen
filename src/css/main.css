@@ -604,6 +604,7 @@ footer {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  max-height: 44.8px;
 }
 
 .food-information-section h4 {
@@ -795,6 +796,12 @@ footer {
   background-color: #3f4e6f;
 }
 
+@media (max-width: 1140px) {
+  .our-products .product-carousel img {
+    width: 175px;
+    height: 175px;
+  }
+}
 .form-paragraph-container {
   display: flex;
   flex-direction: column;
