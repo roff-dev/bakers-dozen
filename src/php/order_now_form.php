@@ -28,12 +28,12 @@ include 'connection.php';
         <div class="form-products-wrapper">
             <?php 
                 // Query the database to fetch all product details
-                $stmt = $pdo->query("SELECT image_url, product_name, price, quantity, recipe_url FROM products");
+                $stmt = $pdo->query("SELECT product_id, image_url, product_name, price, quantity, recipe_url FROM products");
                 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             ?>
 
         <div class="form-product-grid">  
-            <?php foreach ($products as $product): ?>
+            <?php foreach ($products as $index => $product): ?>
                 <div class="product-card" 
                     data-product="<?php echo htmlspecialchars(json_encode($product)); ?>"
                     data-name="<?php echo htmlspecialchars($product['product_name']); ?>"
@@ -50,9 +50,14 @@ include 'connection.php';
                         <h3 class="product-name"><?php echo htmlspecialchars($product['product_name']); ?></h3>
                         <p class="product-price">£<?php echo number_format($product['price'], 2); ?></p>
                         <?php if ($product['quantity'] > 0): ?>
-                            <p class="product-status in-stock">In Stock</p>
-                            <label for="quantity-<?php echo $product['product_name']; ?>">Quantity:</label>
-                            <input type="number" id="quantity-<?php echo $product['product_name']; ?>" class="quantity-input" data-price="<?php echo $product['price']; ?>" data-name="<?php echo $product['product_name']; ?>" min="0" max="<?php echo $product['quantity']; ?>" value="0" onchange="calculateTotal()">
+                            <label for="quantity-<?php echo $index; ?>">Quantity:</label>
+                            <input type="number" class="quantity-input" data-price="<?php echo $product['price']; ?>" data-product-id="<?php echo $product['product_id']; ?>" min="0" max="<?php echo $product['quantity']; ?>" value="0" onchange="calculateTotal()">
+
+                            <!-- Hidden fields to pass product data -->
+                            <input type="hidden" name="products[<?php echo $index; ?>][product_id]" value="<?php echo $product['product_id']; ?>">
+                            <input type="hidden" name="products[<?php echo $index; ?>][price]" value="<?php echo $product['price']; ?>">
+                            <input type="hidden" name="products[<?php echo $index; ?>][discount]" value="0.00"> <!-- optional per-product discount -->
+
                         <?php else: ?>
                             <p class="product-status out-of-stock">Out of Stock</p>
                         <?php endif; ?>

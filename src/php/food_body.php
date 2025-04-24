@@ -1,6 +1,6 @@
 <!-- CSS FOR THIS PAGE IN layout/food_body.scss -->
 <!-- main body section -->
-<section>
+<section id="about">
     <!-- FOOD CARD section -->
     <div class="container">
     <div class="food-card-container">

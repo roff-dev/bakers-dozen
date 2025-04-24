@@ -24,7 +24,7 @@
             <div class="nav-content">
                 <h1 class="cursive-header"><a href="../../public/index.php">Baker's Dozen</a></h1>
                 <ul class="nav-links">
-                    <li><a href="">ABOUT</a></li>
+                    <li><a href="../../public/index.php#about">ABOUT</a></li>
                     <li><a href="../../public/find-out-more.php">PRODUCTS</a></li>
                     <li><a href="../../public/testimonial_page.php">TESTIMONIALS</a></li>
                     <li><a href="../../public/order_now.php">ORDER</a></li>
