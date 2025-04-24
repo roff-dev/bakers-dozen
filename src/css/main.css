@@ -172,7 +172,7 @@ h1 {
   text-align: center;
 }
 .banner-content .main-button:hover {
-  background-color: rgb(234, 109.125, 9);
+  background-color: #ea6d09;
 }
 
 @media (max-width: 767px) {
@@ -261,9 +261,13 @@ h1 {
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 100px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .review-section-container h3 {
   color: #52658f;
+  text-align: center;
   font-size: 1.2rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -273,6 +277,10 @@ h1 {
 .review-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .review {
@@ -302,14 +310,16 @@ h1 {
   text-decoration: none;
 }
 
-.fa-quote-left {
+i.fa-solid.fa-quote-left {
+  display: none;
   color: #333956;
   align-self: center;
   font-size: 2.5rem;
   padding-right: 20px;
 }
 
-.fa-quote-right {
+i.fa-solid.fa-quote-right {
+  display: none;
   color: #333956;
   align-self: center;
   font-size: 2.5rem;
@@ -317,7 +327,8 @@ h1 {
 }
 
 .slides {
-  width: 700px;
+  width: 100%;
+  max-width: 700px;
 }
 
 .slick-dots {
@@ -339,6 +350,12 @@ h1 {
   background-color: #da7727;
 }
 
+@media (min-width: 1200px) {
+  i.fa-solid.fa-quote-left,
+  i.fa-solid.fa-quote-right {
+    display: block;
+  }
+}
 footer {
   background-color: #52658f;
   color: #f7f5e6;
@@ -506,7 +523,7 @@ footer {
   text-align: center;
 }
 .testimonial-form-button:hover {
-  background-color: rgb(234, 109.125, 9);
+  background-color: #ea6d09;
 }
 
 @media (min-width: 1200px) {
@@ -725,7 +742,7 @@ footer {
   position: relative;
 }
 .our-products .product-carousel .slick-prev:hover, .our-products .product-carousel .slick-next:hover {
-  background-color: rgb(70.9090909091, 83.3766233766, 109.0909090909);
+  background-color: #47536d;
 }
 .our-products .product-carousel .slick-prev::before, .our-products .product-carousel .slick-next::before {
   content: "";
@@ -756,7 +773,7 @@ footer {
   margin: 0 auto;
 }
 .our-products .product-carousel img:hover {
-  border: 4px solid rgb(63.4133333333, 78.1066666667, 110.5866666667);
+  border: 4px solid #3f4e6f;
 }
 .our-products .find-more-btn button {
   border-radius: 25px;
@@ -775,7 +792,7 @@ footer {
   color: inherit;
 }
 .our-products .find-more-btn button:hover {
-  background-color: rgb(63.4133333333, 78.1066666667, 110.5866666667);
+  background-color: #3f4e6f;
 }
 
 .form-paragraph-container {
@@ -915,7 +932,7 @@ textarea:focus {
 
 .btn-submit:hover {
   cursor: pointer;
-  background-color: rgb(234, 109.125, 9);
+  background-color: #ea6d09;
 }
 
 @media (min-width: 768px) {

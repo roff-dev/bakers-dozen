@@ -12,8 +12,9 @@ $(document).ready(function(){
         dots: true,
         infinite: true,
         speed: 500,
-        fade: true,
-        cssEase: 'linear',
+        fade: false,
+        cssEase: 'ease',
         arrows: false,
+        adaptiveHeight: true
     });
 });
